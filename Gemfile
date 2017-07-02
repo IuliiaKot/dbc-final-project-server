@@ -23,6 +23,9 @@ gem 'simple_command'
 gem 'pry'
 gem 'responders', '~> 2.0'
 
+gem 'active_model_serializers', git: 'https://github.com/rails-api/active_model_serializers.git', branch: '0-8-stable'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
