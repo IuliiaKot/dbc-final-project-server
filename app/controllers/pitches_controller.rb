@@ -18,6 +18,8 @@ class PitchesController < ApplicationController
   def create
     @pitch = current_user.pitches.new(pitch_params)
     if @pitch.save
+
+      hello_world
       render json: @pitch, status: :created, location: @pitch
     else
       render json: @pitch.errors, status: :unprocessable_entity
@@ -38,6 +40,13 @@ class PitchesController < ApplicationController
 #     @pitch.destroy
 #   end
 #
+
+
+def hello_world
+  # debugger
+  Pusher.trigger('my-channel', 'my-event', {message: 'hello world'})
+end
+
   private
     def set_pitch
       @pitch = Pitch.find(params[:id])
