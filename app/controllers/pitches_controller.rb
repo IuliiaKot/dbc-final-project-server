@@ -1,10 +1,10 @@
 class PitchesController < ApplicationController
-  before_action :set_pitch, only: [:show, :create, :update, :destroy]
+  before_action :set_pitch, only: [:show, :update, :destroy]
 
   respond_to :json
 
   def index
-    @pitches = Pitch.all
+    @pitches = current_user.pitches
     render json: @pitches
     # respond_with Pitch.all
   end
