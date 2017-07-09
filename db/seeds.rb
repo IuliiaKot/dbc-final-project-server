@@ -8,8 +8,12 @@
 
 User.delete_all
 Pitch.delete_all
-User.create(email: "julia@gmail.com", password: "123456", first_name: "Julia", last_name: "Back")
-User.create(email: "sam@gmail.com", password: "123456", first_name: "Sam", last_name: "BackBone")
+Cohort.delete_all
+
+Cohort.create(name: 'nyc')
+# binding.pry
+Cohort.last.students.create(email: "julia@gmail.com", password: "123456", first_name: "Julia", last_name: "Back")
+Cohort.last.students.create(email: "sam@gmail.com", password: "123456", first_name: "Sam", last_name: "BackBone")
 
 
 User.first.pitches.create(title: 'Chambray', description: "Cold-pressed gentrify shoreditch, meditation affogato woke helvetica franzen four loko dreamcatcher squid salvia hashtag. Kogi plaid adaptogen poutine banjo. Put a bird on it chartreuse mumblecore copper mug la croix. Skateboard ethical hell of succulents gochujang sriracha celiac butcher banh mi trust fund. Kickstarter occupy godard brunch vice live-edge.")
