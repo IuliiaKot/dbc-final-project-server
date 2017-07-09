@@ -23,6 +23,7 @@ gem 'jwt'
 gem 'simple_command'
 gem 'pry'
 gem 'responders', '~> 2.0'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'active_model_serializers', git: 'https://github.com/rails-api/active_model_serializers.git', branch: '0-8-stable'
 

@@ -19,7 +19,7 @@ class PitchesController < ApplicationController
     @pitch = current_user.pitches.new(pitch_params)
     if @pitch.save
 
-      hello_world
+      # hello_world(@pitch)
       render json: @pitch, status: :created, location: @pitch
     else
       render json: @pitch.errors, status: :unprocessable_entity
@@ -42,9 +42,8 @@ class PitchesController < ApplicationController
 #
 
 
-def hello_world
-  # debugger
-  Pusher.trigger('my-channel', 'my-event', {message: 'hello world'})
+def hello_world(pitch)
+  Pusher.trigger('my-channel', 'my-event', {message: pitch})
 end
 
   private
